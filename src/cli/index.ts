@@ -1,5 +1,6 @@
 // Dependencies:
 import * as minimist from 'minimist';
+import { project } from './project';
 
 import { tsquery } from '../index';
 
@@ -9,7 +10,7 @@ const args = minimist(process.argv.slice(2), {
     }
 });
 
-tsquery.project(args.config).forEach(sourceFile => {
+project(args.config).forEach(sourceFile => {
     const results = tsquery(sourceFile, args.selector);
     if (results.length) {
         // tslint:disable no-console

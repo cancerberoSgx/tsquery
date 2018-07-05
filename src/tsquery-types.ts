@@ -10,7 +10,6 @@ export type TSQueryApi = {
    map <T extends Node = Node> (ast: SourceFile, selector: string, iterator: TSQueryNodeTransformer<T>): SourceFile;
    match <T extends Node = Node> (ast: Node | TSQueryNode<T>, selector: TSQuerySelectorNode): Array<TSQueryNode<T>>;
    parse (selector: string): TSQuerySelectorNode;
-   project (configFilePath: string): Array<SourceFile>;
    query <T extends Node = Node> (ast: string | Node | TSQueryNode<T>, selector: string): Array<TSQueryNode<T>>;
    replace <T extends Node = Node> (text: string, selector: string, iterator: TSQueryStringTransformer<T>): string;
    syntaxKindName (node: SyntaxKind): string;
